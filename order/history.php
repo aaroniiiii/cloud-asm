@@ -5,7 +5,7 @@ include '../head.php';
 // Fetch all orders (latest first)
 $history = $_db->query("
     SELECT id, date, total_unit, total_price
-    FROM `order`
+    FROM `orders`
     ORDER BY date DESC
 ")->fetchAll();
 ?>
@@ -39,7 +39,7 @@ $history = $_db->query("
         <a href="detail.php?id=<?= $h->id ?>">
             <div class="detail_box">
 
-                <div class="order_id">
+                <div class="orders_id">
                     Order ID <br>
                     <strong><?= $h->id ?></strong>
                 </div>
@@ -72,3 +72,4 @@ $history = $_db->query("
 </div> <!-- end container -->
 
 <?php include '../foot.php'; ?>
+
